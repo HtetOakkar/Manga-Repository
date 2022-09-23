@@ -1,6 +1,9 @@
 package com.example.demo.dto;
 
 import java.time.Instant;
+import java.util.Set;
+
+import com.example.demo.model.Chapter;
 
 public class MangaDto {
 
@@ -10,6 +13,7 @@ public class MangaDto {
 	private double rating;
 	private String imageUrl;
 	private Instant createdAt;
+	private Set<Chapter> chapters;
 
 	public Long getId() {
 		return id;
@@ -57,6 +61,14 @@ public class MangaDto {
 
 	public void setCreatedAt(Instant createdAt) {
 		this.createdAt = createdAt;
+	}
+
+	public Set<Chapter> getChapters() {
+		return chapters;
+	}
+
+	public void setChapters(Set<Chapter> chapters) {
+		this.chapters = chapters;
 	}
 
 }

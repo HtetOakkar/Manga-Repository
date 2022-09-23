@@ -1,6 +1,6 @@
 package com.example.demo.dto;
 
-import com.example.demo.model.Chapters;
+import com.example.demo.model.Chapter;
 import com.example.demo.model.request.ChapterRequest;
 import com.example.demo.model.response.ChapterResponse;
 
@@ -10,8 +10,8 @@ public interface ChapterMapper {
 
 	ChapterResponse toChapterResponse(ChapterDto savedChapterDto);
 
-	Chapters toEntity(ChapterDto chapterDto);
+	Chapter toEntity(ChapterDto chapterDto);
 
-	ChapterDto toDto(Chapters savedChapter);
+	ChapterDto toDto(Chapter savedChapter);
 	
 }

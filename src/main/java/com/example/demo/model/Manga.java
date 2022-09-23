@@ -1,15 +1,16 @@
 package com.example.demo.model;
 
 import java.time.Instant;
+import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -18,15 +19,9 @@ import org.hibernate.annotations.CreationTimestamp;
 @Entity
 @Table(name = "Manga")
 public class Manga {
-	
-	
-	@OneToMany(fetch = FetchType.EAGER)
-	@JoinColumn(name = "manga_id", updatable = false, insertable = false)
-	private Set<Chapters> chapter;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="manga_id")
 	private Long id;
 
 	@Column(name = "title")
@@ -44,9 +39,10 @@ public class Manga {
 	@Column(updatable = false)
 	@CreationTimestamp
 	private Instant createdAt;
-	
-	
-	
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "manga", cascade = CascadeType.ALL)
+	private Set<Chapter> chapters = new HashSet<>();
+
 	public Long getId() {
 		return id;
 	}

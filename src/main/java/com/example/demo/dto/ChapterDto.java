@@ -2,44 +2,20 @@ package com.example.demo.dto;
 
 import java.time.Instant;
 
+import com.example.demo.model.Manga;
+
 public class ChapterDto {
-	private Long chaptId;
-	private String chaptTitle;
-	private String chaptDescription;
+	private Long chapterId;
 	private String imageUrl;
-	private double chaptRating;
 	private Instant createdAt;
-	private Long mangaId;
-	public Long getMangaId() {
-		return mangaId;
+	private Manga manga;
+
+	public Long getChapterId() {
+		return chapterId;
 	}
 
-	public void setMangaId(Long mangaId) {
-		this.mangaId = mangaId;
-	}
-
-	public Long getChaptId() {
-		return chaptId;
-	}
-
-	public void setChaptId(Long chaptId) {
-		this.chaptId = chaptId;
-	}
-
-	public String getChaptTitle() {
-		return chaptTitle;
-	}
-
-	public void setChaptTitle(String chaptTitle) {
-		this.chaptTitle = chaptTitle;
-	}
-
-	public String getChaptDescription() {
-		return chaptDescription;
-	}
-
-	public void setChaptDescription(String chaptDescription) {
-		this.chaptDescription = chaptDescription;
+	public void setChapterId(Long chapterId) {
+		this.chapterId = chapterId;
 	}
 
 	public String getImageUrl() {
@@ -50,14 +26,6 @@ public class ChapterDto {
 		this.imageUrl = imageUrl;
 	}
 
-	public double getChaptRating() {
-		return chaptRating;
-	}
-
-	public void setChaptRating(double chaptRating) {
-		this.chaptRating = chaptRating;
-	}
-
 	public Instant getCreatedAt() {
 		return createdAt;
 	}
@@ -65,4 +33,13 @@ public class ChapterDto {
 	public void setCreatedAt(Instant createdAt) {
 		this.createdAt = createdAt;
 	}
+
+	public Manga getManga() {
+		return manga;
+	}
+
+	public void setManga(Manga manga) {
+		this.manga = manga;
+	}
+
 }
